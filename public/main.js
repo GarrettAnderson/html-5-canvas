@@ -13,6 +13,12 @@ let lastY = 0
 function draw(event) {
   if (!isDrawing) return // stop the function from running when they are not moused
   console.log(event)
+  ctx.beginPath()
+  // start from 
+  ctx.moveTo(lastX, lastY)
+  // go to
+  ctx.lineTo(event.offsetX, event.offsetY)
+  ctx.stroke()
 }
 
 canvas.addEventListener('mousemove', draw) 
