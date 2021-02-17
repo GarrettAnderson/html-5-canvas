@@ -52,10 +52,10 @@ ctx.beginPath();
     ctx.fill();
 
 
-==================
- Draw a triangle
-==================
-*/
+====================
+ Draw a Smiley Face
+====================
+
 
 ctx.beginPath();
 ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
@@ -68,8 +68,26 @@ ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
 ctx.stroke();
 
 
+==============
+ Draw a line
+==============
 
+// Filled triangle
+ctx.beginPath();
+ctx.moveTo(25, 25);
+ctx.lineTo(105, 25);
+ctx.lineTo(25, 105);
+ctx.fill();
 
+// Stroked triangle
+ctx.beginPath();
+ctx.moveTo(125, 125);
+ctx.lineTo(125, 45);
+ctx.lineTo(45, 125);
+ctx.closePath();
+ctx.stroke();
+
+*/
 
 
 
