@@ -49,8 +49,10 @@ function endLn(e) {
 
 function drawLine(ctx, x1, y1, x2, y2) {
   ctx.beginPath();
-  ctx.strokeStyle = 'black';
-  ctx.lineWidth = 1;
+  ctx.strokeStyle = '#BADA55';
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+  ctx.lineWidth = 100;
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.stroke();
