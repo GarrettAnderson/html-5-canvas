@@ -114,11 +114,14 @@ function draw() {
         }
       }
     }
-}
+  }
+
+  draw()
 
 
 ========================
 Quadratic Bezier curves
+(draws a comment bubble)
 ========================
 
 function draw() {
@@ -143,6 +146,11 @@ draw()
 
 
 
+=========================
+Cubic Bezier curves
+(draws a heart)
+=========================
+
 
 
 */
@@ -154,29 +162,21 @@ draw()
 
 
 
-
 function draw() {
-    for (var i = 0; i < 4; i++) {
-      for (var j = 0; j < 3; j++) {
-        ctx.beginPath();
-        var x = 25 + j * 50; // x coordinate
-        var y = 25 + i * 50; // y coordinate
-        var radius = 20; // Arc radius
-        var startAngle = 0; // Starting point on circle
-        var endAngle = Math.PI + (Math.PI * j) / 2; // End point on circle
-        var anticlockwise = i % 2 !== 0; // clockwise or anticlockwise
+  if (canvas.getContext) {
 
-        ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
-
-        if (i > 1) {
-          ctx.fill();
-        } else {
-          ctx.stroke();
-        }
-      }
-    }
+    // Cubic curves example
+    ctx.beginPath();
+    ctx.moveTo(75, 40);
+    ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+    ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+    ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+    ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+    ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+    ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
+    ctx.fill();
+  }
 }
-
 
 draw()
 
