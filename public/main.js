@@ -13,12 +13,13 @@ console.log(ctx)
 
 
 // event.offsetX, event.offsetY gives the (x,y) offset from the edge of the canvas.
+  // ??? event.offsetX, event.offsetY VS event.screenX, event.screenY ???
 
 // event listener function when mouse is pressed down
 
 function startLn(e) {
-  x = e.screenX
-  y = e.screenY
+  x = e.offsetX
+  y = e.offsetY
   isDrawing = true
   console.log(e)
 }
@@ -26,11 +27,34 @@ function startLn(e) {
 // event listener function when mouse is pressed down
 
 function drawingLn(e) {
-  console.log(e)
+    console.log('line drawing')
+
+    if (isDrawing === true) {
+    drawLine(ctx, x, y, e.offsetX, e.offsetY);
+    x = e.offsetX;
+    y = e.offsetY;
+  }
 }
 
 function endLn(e) {
-  console.log(e)
+    console.log('line ended')
+
+    if (isDrawing === true) {
+      drawLine(ctx, x, y, e.offsetX, e.offsetY);
+      x = 0;
+      y = 0;
+      isDrawing = false;
+  }
+}
+
+function drawLine(ctx, x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 1;
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.stroke();
+  ctx.closePath();
 }
 
 
@@ -139,8 +163,8 @@ Quadratic Bezier curves
 
 function draw() {
   // var canvas = document.getElementById('canvas');
-  // if (canvas.getContext) {
-    // var ctx = canvas.getContext('2d');
+  // if (canvas.getctx) {
+    // var ctx = canvas.getctx('2d');
 
     // Quadratric curves example
     ctx.beginPath();
@@ -165,7 +189,7 @@ Cubic Bezier curves
 =========================
 
 function draw() {
-  if (canvas.getContext) {
+  if (canvas.getctx) {
 
     // Cubic curves example
     ctx.beginPath();
@@ -188,7 +212,7 @@ Draw a Pac Man snippet
 =======================
 
 function draw() {
-  if (canvas.getContext) {
+  if (canvas.getctx) {
 
     roundedRect(ctx, 12, 12, 150, 150, 15);
     roundedRect(ctx, 19, 19, 150, 150, 9);
@@ -277,7 +301,7 @@ draw()
 ========================
 
 const canvas = document.querySelector('#draw');
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getctx('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 ctx.strokeStyle = '#BADA55';
