@@ -4,6 +4,7 @@
 
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d');
+const clearBtn = body.getElementById("clear")
 let isDrawing = false;
 let x = 0;
 let y = 0;
