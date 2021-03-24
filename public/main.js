@@ -63,6 +63,7 @@ function drawLine(ctx, x1, y1, x2, y2) {
 
 function clearCanvas() {
   console.log('Cleared')
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 
