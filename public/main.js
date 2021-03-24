@@ -2,6 +2,7 @@
 //   Garrett Custom JS
 // ========================
 
+const body = document.querySelector('body')
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d');
 const clearBtn = body.getElementById("clear")
