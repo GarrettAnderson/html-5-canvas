@@ -60,6 +60,10 @@ function drawLine(ctx, x1, y1, x2, y2) {
   ctx.closePath();
 }
 
+function clearCanvas() {
+  console.log('Cleared')
+}
+
 
 canvas.addEventListener('mousedown', startLn)
 
@@ -67,7 +71,7 @@ canvas.addEventListener('mousemove', drawingLn)
 
 canvas.addEventListener('mouseup', endLn)
 
-
+clearBtn.addEventListener('click', clearCanvas)
 
 
 /*
