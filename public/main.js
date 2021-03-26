@@ -6,6 +6,9 @@ const body = document.querySelector('body')
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d');
 const clearBtn = document.getElementById("clear")
+const light = 50;
+const sat = 100;
+let h = 0;
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -35,6 +38,8 @@ function drawingLn(e) {
     drawLine(ctx, x, y, e.offsetX, e.offsetY);
     x = e.offsetX;
     y = e.offsetY;
+
+
   }
 }
 
@@ -50,6 +55,9 @@ function endLn(e) {
 }
 
 function drawLine(ctx, x1, y1, x2, y2) {
+
+
+
   ctx.beginPath();
   ctx.strokeStyle = '#BADA55';
   ctx.lineJoin = 'round';
