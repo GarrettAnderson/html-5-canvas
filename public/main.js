@@ -39,6 +39,11 @@ function drawingLn(e) {
     x = e.offsetX;
     y = e.offsetY;
 
+    for ( let i = 0; i <= 360; i++) {
+      hue += i
+      console.log(hue)
+    }
+
 
   }
 }
