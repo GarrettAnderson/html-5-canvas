@@ -8,7 +8,7 @@ const ctx = canvas.getContext('2d');
 const clearBtn = document.getElementById("clear")
 const light = 50;
 const sat = 100;
-let hue = 0;
+let hue = 40;
 let isDrawing = false;
 let x = 0;
 let y = 0;
@@ -37,11 +37,12 @@ function drawingLn(e) {
     drawLine(ctx, x, y, e.offsetX, e.offsetY);
     x = e.offsetX;
     y = e.offsetY;
-    // console.log('hsl(200, 100%, 50%)')
-    for ( let i = 0; i <= 360; i++) {
-      hue += i
-      // console.log(hue)
-    }
+    hue ++
+    // // console.log('hsl(200, 100%, 50%)')
+    // for ( let i = 0; i <= 360; i++) {
+    //   hue += i
+    //   // console.log(hue)
+    // }
   }
 }
 
