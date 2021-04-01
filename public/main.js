@@ -32,19 +32,16 @@ function startLn(e) {
 // event listener function when mouse is pressed down
 
 function drawingLn(e) {
-    console.log('line drawing')
 
     if (isDrawing === true) {
     drawLine(ctx, x, y, e.offsetX, e.offsetY);
     x = e.offsetX;
     y = e.offsetY;
-
+    // console.log('hsl(200, 100%, 50%)')
     for ( let i = 0; i <= 360; i++) {
       hue += i
       // console.log(hue)
     }
-
-
   }
 }
 
@@ -64,7 +61,11 @@ function drawLine(ctx, x1, y1, x2, y2) {
 
 
   ctx.beginPath();
-  ctx.strokeStyle = hsl(0, 100%, 50%);
+  ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
+  // ctx.strokeStyle = 'hsl(20, 100%, 50)';
+  // ctx.fillStyle = hsl(50, 100%, 50);
+
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
   ctx.lineWidth = 100;
